@@ -10,7 +10,7 @@ export class FormularioRegistroUsuarioComponent {
   usuarioForm = this.fb.group({
     name: ['', Validators.required],
     username: ['', Validators.required],
-    email: ['', Validators.required, Validators.email],
+    email: ['', [Validators.required, Validators.email]],
     phone: ['', Validators.required],
     website: ['', Validators.required]
   });
@@ -18,6 +18,6 @@ export class FormularioRegistroUsuarioComponent {
   constructor(private fb: FormBuilder) { }
 
   onSubmit() {
-    alert("submitted");
+    console.log(this.usuarioForm.errors);
   }
 }
