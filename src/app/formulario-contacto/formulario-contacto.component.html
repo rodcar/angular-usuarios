@@ -1,0 +1,27 @@
+<form [formGroup]="contactoForm" (ngSubmit)="onSubmit()" class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Nombre Completo</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Ingrese su nombre completo" />
+        <mat-error *ngIf="contactoForm.controls.name.hasError('required')">
+            El nombre completo es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Correo</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Ingrese su correo" />
+        <mat-error *ngIf="contactoForm.controls.email.hasError('required')">
+            El correo es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput formControlName="mensaje" placeholder="Ingrese su mensaje" rows="7"></textarea>
+        <mat-error *ngIf="contactoForm.controls.mensaje.hasError('required')">
+            El mensaje es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="contactoForm.invalid">
+        Enviar
+    </button>
+</form>
