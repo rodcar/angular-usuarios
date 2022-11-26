@@ -1,0 +1,91 @@
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre Completo</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="name"
+      placeholder="Ingrese su nombre completo"
+    />
+    <mat-error *ngIf="usuarioForm.controls.name.hasError('required')">
+      El nombre completo es <strong>obligatorio</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre de usuario</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="username"
+      placeholder="Ingrese un nombre de usuario"
+    />
+    <mat-error *ngIf="usuarioForm.controls.username.hasError('required')">
+      El nombre de usuario es <strong>obligatorio</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Correo</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="Ingrese su correo"
+    />
+    <mat-error *ngIf="usuarioForm.controls.email.hasError('required')">
+      El correo es <strong>obligatorio</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Teléfono</mat-label>
+    <input
+      type="tel"
+      matInput
+      formControlName="phone"
+      placeholder="Ingrese su teléfono"
+    />
+    <mat-error *ngIf="usuarioForm.controls.phone.hasError('required')">
+      El teléfono es <strong>obligatorio</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Sitio Web</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="website"
+      placeholder="Ingrese su sitio web"
+    />
+    <mat-error *ngIf="usuarioForm.controls.website.hasError('required')">
+      El sitio web es <strong>obligatorio</strong>
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="usuarioForm.invalid"
+  >
+    Registrar
+  </button>
+</form>
+
+<!--<form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="name">
+  
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="username">
+
+    <label for="email">First Name: </label>
+    <input id="email" type="email" formControlName="email">
+  
+    <label for="phone">Last Name: </label>
+    <input id="phone" type="tel" formControlName="phone">
+
+    <label for="website">Last Name: </label>
+    <input id="website" type="text" formControlName="website">
+
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!usuarioForm.valid">Submit</button>
+</form>-->
