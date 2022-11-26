@@ -9,11 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioRegistroUsuarioComponent
+    FormularioRegistroUsuarioComponent,
+    FormularioContactoComponent
   ],
   imports: [
     BrowserModule,
