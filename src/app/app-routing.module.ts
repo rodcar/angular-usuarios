@@ -9,6 +9,10 @@ import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.componen
 
 const routes: Routes = [
   {
+    path: '',
+    component: HomeComponent
+  },
+  {
     path: 'inicio',
     component: HomeComponent
   },
