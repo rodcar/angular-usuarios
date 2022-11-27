@@ -24,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.component';
 import { ContactoPageComponent } from './pages/contacto-page/contacto-page.component';
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
+import { UsuariosService } from './usuarios.service';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agrega
     MatListModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

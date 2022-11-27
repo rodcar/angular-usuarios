@@ -1,26 +1,5 @@
 import { Component } from '@angular/core';
-
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  website: string;
-}
-
-const USERS: User[] = [
-  { id: 1, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 2, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 3, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 4, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 5, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 6, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 7, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 8, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 9, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'},
-  { id: 10, name: 'Ivan Rodriguez', username: 'rodcar', email: 'ivan.rodriguez@gmail.com', phone: '950322270', website: 'ivanrodriguez.com'}
-];
+import { UsuariosService } from '../usuarios.service';
 
 @Component({
   selector: 'app-tabla-usuarios',
@@ -29,5 +8,11 @@ const USERS: User[] = [
 })
 export class TablaUsuariosComponent {
   displayedColumns: string[] = ['id', 'name', 'username', 'email', 'phone', 'website'];
-  dataSource = USERS;
+  dataSource: any[] = [];
+
+  constructor(private usuariosService: UsuariosService) { }
+
+  ngOnInit() {
+    this.dataSource = this.usuariosService.getAll();
+  }
 }
