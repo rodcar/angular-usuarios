@@ -20,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MatListModule } from '@angular/material/list';
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    TablaUsuariosComponent
   ],
   imports: [
     BrowserModule,
