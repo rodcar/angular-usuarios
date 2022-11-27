@@ -13,8 +13,10 @@ export class TablaUsuariosComponent {
   constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit() {
-    this.usuariosService.getAll().subscribe(
-      (response) => { this.dataSource = response; },
-      (error) => { console.log(error); });
+    this.usuariosService.getAll().subscribe({
+      next: (users) => { this.dataSource = users; },
+      error: (e) => console.log(e),
+      complete: () => console.log('Usuarios cargados satisfactoriamente')
+    });
   }
 }
