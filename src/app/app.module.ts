@@ -13,6 +13,7 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
 
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     FormularioRegistroUsuarioComponent,
     FormularioContactoComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
