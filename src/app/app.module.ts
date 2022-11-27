@@ -7,8 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormularioRegistroUsuarioComponent } from './formulario-registro-usuario/formulario-registro-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
 
 import { HomeComponent } from './home/home.component';
@@ -20,9 +20,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.component';
 import { ContactoPageComponent } from './pages/contacto-page/contacto-page.component';
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
+import { UsuariosService } from './usuarios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -49,9 +52,11 @@ import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agrega
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
