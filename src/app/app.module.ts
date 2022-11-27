@@ -21,6 +21,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.component';
+import { ContactoPageComponent } from './pages/contacto-page/contacto-page.component';
+import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.componen
     FooterComponent,
     HeaderComponent,
     NavbarComponent,
-    TablaUsuariosComponent
+    TablaUsuariosComponent,
+    ContactoPageComponent,
+    AgregarUsuarioPageComponent
   ],
   imports: [
     BrowserModule,

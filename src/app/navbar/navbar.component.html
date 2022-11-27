@@ -1,15 +1,23 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
     <mat-toolbar>Menú</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="inicio" routerLinkActive="active-list-item">
         <mat-icon matListItemIcon>home</mat-icon>
         <a matListItemLine>Página principal</a>
       </a>
-      <a mat-list-item routerLink="usuarios" routerLinkActive="active-list-item">
+      <a
+        mat-list-item
+        routerLink="usuarios"
+        routerLinkActive="active-list-item"
+      >
         <mat-icon matListItemIcon>groups</mat-icon>
         <a matListItemLine>Listar usuarios</a>
       </a>
@@ -17,7 +25,11 @@
         <mat-icon matListItemIcon>person_add</mat-icon>
         <a matListItemLine>Agregar usuario</a>
       </a>
-      <a mat-list-item routerLink="contacto" routerLinkActive="active-list-item">
+      <a
+        mat-list-item
+        routerLink="contacto"
+        routerLinkActive="active-list-item"
+      >
         <mat-icon matListItemIcon>live_help</mat-icon>
         <a matListItemLine>Contacto</a>
       </a>
@@ -30,12 +42,15 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="isHandset$ | async"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div class="container-sm mt-4" style="padding-left: 20px">
+      <router-outlet></router-outlet>
+    </div>
     <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
