@@ -25,6 +25,7 @@ import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.componen
 import { ContactoPageComponent } from './pages/contacto-page/contacto-page.component';
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { UsuariosService } from './usuarios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { UsuariosService } from './usuarios.service';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [UsuariosService],
   bootstrap: [AppComponent]

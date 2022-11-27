@@ -8,11 +8,13 @@ import { UsuariosService } from '../usuarios.service';
 })
 export class TablaUsuariosComponent {
   displayedColumns: string[] = ['id', 'name', 'username', 'email', 'phone', 'website'];
-  dataSource: any[] = [];
+  dataSource: any;
 
   constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit() {
-    this.dataSource = this.usuariosService.getAll();
+    this.usuariosService.getAll().subscribe(
+      (response) => { this.dataSource = response; },
+      (error) => { console.log(error); });
   }
 }
