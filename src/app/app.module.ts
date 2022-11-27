@@ -10,13 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
+
+import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioRegistroUsuarioComponent,
     FormularioContactoComponent,
+    HomeComponent,
     FooterComponent
   ],
   imports: [
