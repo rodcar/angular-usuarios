@@ -15,3 +15,11 @@
   top: 0;
   z-index: 1;
 }
+
+.active-list-item a{
+  color: #3F51B5 !important;
+}
+
+.active-list-item mat-icon{
+  color: #3F51B5 !important;
+}
