@@ -7,6 +7,12 @@
       formControlName="name"
       placeholder="Ingrese su nombre completo"
     />
+    <mat-error *ngIf="usuarioForm.controls.name.hasError('maxlength')">
+      El nombre debe tener como máximo <strong>50 caracteres</strong>
+    </mat-error>
+    <mat-error *ngIf="usuarioForm.controls.name.hasError('pattern')">
+      El nombre solo puede contener <strong>letras</strong>
+    </mat-error>
     <mat-error *ngIf="usuarioForm.controls.name.hasError('required')">
       El nombre completo es <strong>obligatorio</strong>
     </mat-error>
@@ -19,6 +25,12 @@
       formControlName="username"
       placeholder="Ingrese un nombre de usuario"
     />
+    <mat-error *ngIf="usuarioForm.controls.username.hasError('maxlength')">
+      El nombre de usuario debe tener como máximo <strong>25 caracteres</strong>
+    </mat-error>
+    <mat-error *ngIf="usuarioForm.controls.username.hasError('pattern')">
+      El nombre solo puede contener <strong>letras, números, -, y _</strong>
+    </mat-error>
     <mat-error *ngIf="usuarioForm.controls.username.hasError('required')">
       El nombre de usuario es <strong>obligatorio</strong>
     </mat-error>
@@ -31,6 +43,12 @@
       formControlName="email"
       placeholder="Ingrese su correo"
     />
+    <mat-error *ngIf="usuarioForm.controls.email.hasError('pattern')">
+      El correo sebe seguir el formato, por ejemplo <strong>correo@gmail.com</strong>
+    </mat-error>
+    <mat-error *ngIf="usuarioForm.controls.email.hasError('email')">
+      El correo sebe seguir el formato, por ejemplo <strong>correo@gmail.com</strong>
+    </mat-error>
     <mat-error *ngIf="usuarioForm.controls.email.hasError('required')">
       El correo es <strong>obligatorio</strong>
     </mat-error>
@@ -43,6 +61,15 @@
       formControlName="phone"
       placeholder="Ingrese su teléfono"
     />
+    <mat-error *ngIf="usuarioForm.controls.phone.hasError('pattern')">
+      El número de teléfono solo puede contener <strong>números</strong>
+    </mat-error>
+    <mat-error *ngIf="usuarioForm.controls.phone.hasError('minlength')">
+      El número de teléfono debe tener como mínimo <strong>7 caracteres</strong>
+    </mat-error>
+    <mat-error *ngIf="usuarioForm.controls.phone.hasError('maxlength')">
+      El número de teléfono debe tener como máximo <strong>9 caracteres</strong>
+    </mat-error>
     <mat-error *ngIf="usuarioForm.controls.phone.hasError('required')">
       El teléfono es <strong>obligatorio</strong>
     </mat-error>
@@ -55,6 +82,12 @@
       formControlName="website"
       placeholder="Ingrese su sitio web"
     />
+    <mat-error *ngIf="usuarioForm.controls.website.hasError('pattern')">
+      El sitio web debe seguir el formato, por ejemplo <strong>www.sitio.com</strong>
+    </mat-error>
+    <mat-error *ngIf="usuarioForm.controls.website.hasError('maxlength')">
+      El sitio web debe tener como máximo <strong>50 caracteres</strong>
+    </mat-error>
     <mat-error *ngIf="usuarioForm.controls.website.hasError('required')">
       El sitio web es <strong>obligatorio</strong>
     </mat-error>
