@@ -7,17 +7,18 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./formulario-registro-usuario.component.css']
 })
 export class FormularioRegistroUsuarioComponent {
-  usuarioForm = this.fb.group({
-    name: ['', Validators.required],
-    username: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    phone: ['', Validators.required],
-    website: ['', Validators.required]
+  usuarioForm = this.fb.nonNullable.group({
+    name: ['', [Validators.required, Validators.maxLength(50), Validators.pattern('^[a-zA-ZÀ-ú\s ]*$')]],
+    username: ['', [Validators.required, Validators.maxLength(25), Validators.pattern('^[a-zA-Z0-9_.-]*$')]],
+    email: ['', [Validators.required, Validators.email]], // falta validar el correo cuando no tiene punto, por ejemplo: ivan@gmail
+    phone: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(9), Validators.pattern('^[0-9]*$')]],
+    website: ['', [Validators.required, Validators.maxLength(50), Validators.pattern('^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$')]]
   });
 
   constructor(private fb: FormBuilder) { }
 
   onSubmit() {
-    console.log(this.usuarioForm.errors);
+    console.log(this.usuarioForm.value);
+    alert('El usuario es válido');
   }
 }
