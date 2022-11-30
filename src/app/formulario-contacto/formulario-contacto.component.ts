@@ -8,9 +8,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class FormularioContactoComponent {
   contactoForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    mensaje: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(250)]]
+    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern('[a-zA-Z ]*')]],
+    email: ['', [Validators.required, Validators.email, Validators.maxLength(50), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$') ]],
+    mensaje: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(250), Validators.pattern('[a-zA-Z0-9 ]*')]]
   });
 
   constructor(private fb: FormBuilder) { }
