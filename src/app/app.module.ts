@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
+import { ContactoSuccessDialog, FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
 
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -26,11 +26,11 @@ import { ContactoPageComponent } from './pages/contacto-page/contacto-page.compo
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EmailSuccessDialog, FormularioSuscripcionComponent } from './footer/formulario-suscripcion/formulario-suscripcion.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-
 
 @NgModule({
   declarations: [
@@ -44,7 +44,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     TablaUsuariosComponent,
     ContactoPageComponent,
     AgregarUsuarioPageComponent,
-    UsuarioSuccessDialog
+    FormularioSuscripcionComponent,
+    EmailSuccessDialog,
+    UsuarioSuccessDialog,
+    ContactoSuccessDialog
   ],
   imports: [
     BrowserModule,
