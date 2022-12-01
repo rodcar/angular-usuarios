@@ -4,19 +4,11 @@ import {
   collection,
 } from '@firebase/firestore';
 
-import { collectionData, Firestore } from '@angular/fire/firestore';
+import { addDoc, collectionData, Firestore } from '@angular/fire/firestore';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-interface Cliente {
-  id: string;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  website: string;
-}
+import { Cliente } from './models/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +17,7 @@ export class UsuariosFirestoreService {
   private COLLECTION_NAME = "clientes";
   private clientesCollection: CollectionReference<DocumentData>;
 
-  constructor(private readonly firestore: Firestore) {
+  constructor(private firestore: Firestore) {
     this.clientesCollection = collection(this.firestore, this.COLLECTION_NAME);
   }
 
@@ -33,5 +25,9 @@ export class UsuariosFirestoreService {
     return collectionData(this.clientesCollection, {
       idField: 'id',
     }) as Observable<Cliente[]>;
+  }
+
+  create(cliente: Cliente) {
+    return addDoc(this.clientesCollection, cliente);
   }
 }
