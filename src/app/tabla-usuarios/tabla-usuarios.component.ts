@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuariosFirestoreService } from '../usuarios-firestore.service';
 import { UsuariosService } from '../usuarios.service';
 
 @Component({
@@ -10,13 +11,19 @@ export class TablaUsuariosComponent {
   displayedColumns: string[] = ['id', 'name', 'username', 'email', 'phone', 'website'];
   dataSource: any;
 
-  constructor(private usuariosService: UsuariosService) { }
+  //constructor(private usuariosService: UsuariosService) { }
+  constructor(private clientesService: UsuariosFirestoreService) { }
 
   ngOnInit() {
-    this.usuariosService.getAll().subscribe({
+    this.clientesService.getAll().subscribe({
       next: (users) => { this.dataSource = users; },
       error: (e) => console.log(e),
       complete: () => console.log('Usuarios cargados satisfactoriamente')
     });
+    /*this.usuariosService.getAll().subscribe({
+      next: (users) => { this.dataSource = users; },
+      error: (e) => console.log(e),
+      complete: () => console.log('Usuarios cargados satisfactoriamente')
+    });*/
   }
 }
