@@ -27,6 +27,9 @@ import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agrega
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -57,7 +60,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatListModule,
     MatTableModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [UsuariosService],
   bootstrap: [AppComponent]
