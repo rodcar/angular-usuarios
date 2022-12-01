@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
+import { ContactoSuccessDialog, FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
 
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -43,7 +43,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AgregarUsuarioPageComponent,
     FormularioSuscripcionComponent,
     EmailSuccessDialog,
-    UsuarioSuccessDialog
+    UsuarioSuccessDialog,
+    ContactoSuccessDialog
   ],
   imports: [
     BrowserModule,
