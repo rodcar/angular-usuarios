@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormularioRegistroUsuarioComponent } from './formulario-registro-usuario/formulario-registro-usuario.component';
+import { FormularioRegistroUsuarioComponent, UsuarioSuccessDialog } from './formulario-registro-usuario/formulario-registro-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputModule } from '@angular/material/input';
@@ -40,7 +40,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     NavbarComponent,
     TablaUsuariosComponent,
     ContactoPageComponent,
-    AgregarUsuarioPageComponent
+    AgregarUsuarioPageComponent,
+    UsuarioSuccessDialog
   ],
   imports: [
     BrowserModule,
