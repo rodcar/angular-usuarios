@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-formulario-registro-usuario',
@@ -15,10 +16,20 @@ export class FormularioRegistroUsuarioComponent {
     website: ['', [Validators.required, Validators.maxLength(50), Validators.pattern('^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$')]]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog) { }
 
   onSubmit() {
     console.log(this.usuarioForm.value);
-    alert('El usuario es válido');
+    this.openDialog();
+  }
+
+  openDialog() {
+    this.dialog.open(UsuarioSuccessDialog);
   }
 }
+
+@Component({
+  selector: 'registro-usuario-success-dialog',
+  templateUrl: './registro-usuario-success-dialog.html',
+})
+export class UsuarioSuccessDialog {}
