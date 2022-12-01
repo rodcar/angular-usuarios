@@ -26,8 +26,8 @@ import { ContactoPageComponent } from './pages/contacto-page/contacto-page.compo
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EmailSuccessDialog, FormularioSuscripcionComponent } from './footer/formulario-suscripcion/formulario-suscripcion.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
 
 @NgModule({
   declarations: [
@@ -41,6 +41,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     TablaUsuariosComponent,
     ContactoPageComponent,
     AgregarUsuarioPageComponent,
+    FormularioSuscripcionComponent,
+    EmailSuccessDialog,
     UsuarioSuccessDialog
   ],
   imports: [
