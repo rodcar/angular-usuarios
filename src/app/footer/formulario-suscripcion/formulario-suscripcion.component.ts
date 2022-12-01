@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-formulario-suscripcion',
@@ -14,11 +15,16 @@ export class FormularioSuscripcionComponent {
     
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog) { }
 
   onSubmit() {
     console.log(this.suscripcionForm.errors);
+    this.dialog.open(EmailSuccessDialog);
   }
 
 }
- 
+@Component({
+  selector: 'email-success-dialog',
+  templateUrl: './email-success-dialog.html',
+})
+export class EmailSuccessDialog {}

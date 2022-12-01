@@ -26,8 +26,8 @@ import { ContactoPageComponent } from './pages/contacto-page/contacto-page.compo
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormularioSuscripcionComponent } from './footer/formulario-suscripcion/formulario-suscripcion.component';
-
+import { EmailSuccessDialog, FormularioSuscripcionComponent } from './footer/formulario-suscripcion/formulario-suscripcion.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { FormularioSuscripcionComponent } from './footer/formulario-suscripcion/
     TablaUsuariosComponent,
     ContactoPageComponent,
     AgregarUsuarioPageComponent,
-    FormularioSuscripcionComponent
+    FormularioSuscripcionComponent,
+    EmailSuccessDialog
   ],
   imports: [
     BrowserModule,
@@ -56,7 +57,8 @@ import { FormularioSuscripcionComponent } from './footer/formulario-suscripcion/
     MatIconModule,
     MatListModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [UsuariosService],
   bootstrap: [AppComponent]
