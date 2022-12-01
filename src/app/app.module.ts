@@ -26,6 +26,7 @@ import { ContactoPageComponent } from './pages/contacto-page/contacto-page.compo
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormularioSuscripcionComponent } from './footer/formulario-suscripcion/formulario-suscripcion.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     TablaUsuariosComponent,
     ContactoPageComponent,
-    AgregarUsuarioPageComponent
+    AgregarUsuarioPageComponent,
+    FormularioSuscripcionComponent
   ],
   imports: [
     BrowserModule,
