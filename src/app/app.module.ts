@@ -34,6 +34,10 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { ContactoFirestoreService } from './contacto-firestore.service';
 import { SuscripcionFirestoreService } from './suscripcion-firestore.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FormularioSuscripcionComponent,
     EmailSuccessDialog,
     UsuarioSuccessDialog,
-    ContactoSuccessDialog
+    ContactoSuccessDialog,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [UsuariosService, ContactoFirestoreService, SuscripcionFirestoreService],
   bootstrap: [AppComponent]
