@@ -38,6 +38,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatPaginatorModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatExpansionModule,
+    MatTooltipModule
   ],
   providers: [UsuariosService, ContactoFirestoreService, SuscripcionFirestoreService],
   bootstrap: [AppComponent]
