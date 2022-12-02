@@ -23,3 +23,7 @@
 .active-list-item mat-icon{
   color: #3F51B5 !important;
 }
+
+.toolbar-item-spacer {
+  flex: 1 1 auto;
+}

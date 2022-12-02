@@ -47,6 +47,31 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
+      <span class="toolbar-item-spacer"></span>
+      <button mat-icon-button matTooltip="Notifications">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Mi cuenta"
+        [matMenuTriggerFor]="userAccountMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userAccountMenu [overlapTrigger]="false" yPosition="below">
+        <button mat-menu-item routerLink="#">
+          <mat-icon>person</mat-icon><span>Mi cuenta</span>
+        </button>
+        <button mat-menu-item routerLink="#">
+          <mat-icon>settings</mat-icon><span>Ajustes</span>
+        </button>
+        <button mat-menu-item routerLink="#">
+          <mat-icon>help</mat-icon><span>Ayuda</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item routerLink="#">
+          <mat-icon>exit_to_app</mat-icon>Cerrar sesión
+        </button>
+      </mat-menu>
     </mat-toolbar>
     <div class="container-sm mt-4" style="padding-left: 20px">
       <router-outlet></router-outlet>
