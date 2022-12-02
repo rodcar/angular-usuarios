@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Cliente } from '../models/cliente';
+import { UsuariosFirestoreService } from '../usuarios-firestore.service';
 
 @Component({
   selector: 'app-formulario-registro-usuario',
@@ -14,11 +17,37 @@ export class FormularioRegistroUsuarioComponent {
     phone: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(9), Validators.pattern('^[0-9]*$')]],
     website: ['', [Validators.required, Validators.maxLength(50), Validators.pattern('^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$')]]
   });
+  cliente?: Cliente;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private clientesService: UsuariosFirestoreService) { }
 
   onSubmit() {
-    console.log(this.usuarioForm.value);
-    alert('El usuario es válido');
+    this.addCliente();
+  }
+
+  addCliente() {
+    this.cliente = {
+      id: "",
+      name: this.usuarioForm.controls.name.value.trim(),
+      username: this.usuarioForm.controls.username.value.trim(),
+      email: this.usuarioForm.controls.email.value,
+      phone: this.usuarioForm.controls.phone.value,
+      website: this.usuarioForm.controls.website.value
+    } as Cliente;
+
+    this.clientesService.create(this.cliente).finally(() => {
+      this.openDialog();
+      console.log(this.usuarioForm.value);
+    });
+  }
+
+  openDialog() {
+    this.dialog.open(UsuarioSuccessDialog);
   }
 }
+
+@Component({
+  selector: 'registro-usuario-success-dialog',
+  templateUrl: './registro-usuario-success-dialog.html',
+})
+export class UsuarioSuccessDialog { }

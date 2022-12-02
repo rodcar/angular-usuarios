@@ -13,25 +13,47 @@
         <mat-icon matListItemIcon>home</mat-icon>
         <a matListItemLine>Página principal</a>
       </a>
-      <a
-        mat-list-item
-        routerLink="usuarios"
-        routerLinkActive="active-list-item"
-      >
-        <mat-icon matListItemIcon>groups</mat-icon>
-        <a matListItemLine>Listar usuarios</a>
-      </a>
-      <a mat-list-item routerLink="agregar" routerLinkActive="active-list-item">
-        <mat-icon matListItemIcon>person_add</mat-icon>
-        <a matListItemLine>Agregar usuario</a>
-      </a>
+      <mat-expansion-panel [class.mat-elevation-z0]="true" expanded="true">
+        <mat-expansion-panel-header>
+            Clientes
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLink="usuarios" routerLinkActive="active-list-item">
+            <mat-icon matListItemIcon>groups</mat-icon>
+            <a matListItemLine>Listar clientes</a>
+          </a>
+          <a mat-list-item routerLink="agregar" routerLinkActive="active-list-item">
+            <mat-icon matListItemIcon>person_add</mat-icon>
+            <a matListItemLine>Agregar cliente</a>
+          </a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [class.mat-elevation-z0]="true" expanded="true">
+      <mat-expansion-panel-header>
+          Ventas
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="ventas" routerLinkActive="active-list-item">
+          <mat-icon matListItemIcon>sell</mat-icon>
+          <a matListItemLine>Listar ventas</a>
+        </a>
+        <a mat-list-item routerLink="agregarVentas" routerLinkActive="active-list-item">
+          <mat-icon matListItemIcon>add</mat-icon>
+          <a matListItemLine>Agregar venta</a>
+        </a>
+      </mat-nav-list>
+  </mat-expansion-panel>
+  <a mat-list-item routerLink="suscriptores" routerLinkActive="active-list-item">
+    <mat-icon matListItemIcon>inbox</mat-icon>
+    <a matListItemLine>Suscriptores</a>
+  </a>  
       <a
         mat-list-item
         routerLink="contacto"
         routerLinkActive="active-list-item"
       >
         <mat-icon matListItemIcon>live_help</mat-icon>
-        <a matListItemLine>Contacto</a>
+        <a matListItemLine>Soporte técnico</a>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -47,6 +69,31 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
+      <span class="toolbar-item-spacer"></span>
+      <button mat-icon-button matTooltip="Notificaciones">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Mi cuenta"
+        [matMenuTriggerFor]="userAccountMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userAccountMenu [overlapTrigger]="false" yPosition="below">
+        <button mat-menu-item routerLink="#">
+          <mat-icon>person</mat-icon><span>Mi cuenta</span>
+        </button>
+        <button mat-menu-item routerLink="#">
+          <mat-icon>settings</mat-icon><span>Ajustes</span>
+        </button>
+        <button mat-menu-item routerLink="#">
+          <mat-icon>help</mat-icon><span>Ayuda</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item routerLink="#">
+          <mat-icon>exit_to_app</mat-icon>Cerrar sesión
+        </button>
+      </mat-menu>
     </mat-toolbar>
     <div class="container-sm mt-4" style="padding-left: 20px">
       <router-outlet></router-outlet>
