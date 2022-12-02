@@ -32,6 +32,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ContactoFirestoreService } from './contacto-firestore.service';
+import { SuscripcionFirestoreService } from './suscripcion-firestore.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { ContactoFirestoreService } from './contacto-firestore.service';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
-  providers: [UsuariosService, ContactoFirestoreService],
+  providers: [UsuariosService, ContactoFirestoreService, SuscripcionFirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
