@@ -31,6 +31,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { ContactoFirestoreService } from './contacto-firestore.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
-  providers: [UsuariosService],
+  providers: [UsuariosService, ContactoFirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
