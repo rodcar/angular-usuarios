@@ -22,6 +22,7 @@ export class FormularioContactoComponent {
 
   onSubmit() {
     console.log(this.contactoForm.errors);
+    this.addContacto();
 
   }
 
