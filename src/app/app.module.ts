@@ -26,8 +26,8 @@ import { ContactoPageComponent } from './pages/contacto-page/contacto-page.compo
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import {MatCardModule} from '@angular/material/card';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     TablaUsuariosComponent,
     ContactoPageComponent,
-    AgregarUsuarioPageComponent
+    AgregarUsuarioPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +54,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatListModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatAutocompleteModule
   ],
   providers: [UsuariosService],
   bootstrap: [AppComponent]
