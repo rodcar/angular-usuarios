@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormularioRegistroUsuarioComponent, UsuarioSuccessDialog } from './formulario-registro-usuario/formulario-registro-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ContactoSuccessDialog, FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
-
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -26,6 +23,8 @@ import { ContactoPageComponent } from './pages/contacto-page/contacto-page.compo
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { UsuariosService } from './usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { EmailSuccessDialog, FormularioSuscripcionComponent } from './footer/formulario-suscripcion/formulario-suscripcion.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -36,10 +35,10 @@ import { SuscripcionFirestoreService } from './suscripcion-firestore.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -73,6 +72,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatListModule,
     MatTableModule,
     HttpClientModule,
+    MatCardModule,
+    MatAutocompleteModule,
     MatDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
