@@ -13,10 +13,11 @@ import { Cliente } from '../models/cliente';
 export class TablaUsuariosComponent {
   displayedColumns: string[] = ['id', 'name', 'username', 'email', 'phone', 'website'];
   dataSource?: MatTableDataSource<Cliente>;
+  dataSource2: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   //constructor(private usuariosService: UsuariosService) { }
-  constructor(private clientesService: UsuariosFirestoreService) { }
+  constructor(private clientesService: UsuariosFirestoreService, private usuariosService: UsuariosService) { }
 
   ngOnInit() {
     this.clientesService.getAll().subscribe({
@@ -27,10 +28,10 @@ export class TablaUsuariosComponent {
       error: (e) => console.log(e),
       complete: () => console.log('Usuarios cargados satisfactoriamente')
     });
-    /*this.usuariosService.getAll().subscribe({
-      next: (users) => { this.dataSource = users; },
+    this.usuariosService.getAll().subscribe({
+      next: (users) => { this.dataSource2 = users; },
       error: (e) => console.log(e),
       complete: () => console.log('Usuarios cargados satisfactoriamente')
-    });*/
+    });
   }
 }
