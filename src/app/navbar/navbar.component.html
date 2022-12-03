@@ -89,9 +89,26 @@
       </button>
       <span>{{ title }}</span>
       <span class="toolbar-item-spacer"></span>
-      <button mat-icon-button matTooltip="Notificaciones">
+      <button mat-icon-button matTooltip="Notificaciones" [matMenuTriggerFor]="belowMenu">
         <mat-icon>notifications</mat-icon>
       </button>
+      <mat-menu #belowMenu="matMenu" xPosition="before" class="my-menu">
+        <div class="notification-title">
+          <h3>Notificaciones</h3>  
+        </div>
+        <button mat-menu-item class="item">
+          <p class="item-title">3 nuevas suscripciones</p>
+          <p>iivanrod16@hotmail.com, nnrodcar16@gmail.com, ...</p>
+        </button>
+        <button mat-menu-item class="item">
+          <p class="item-title">Tu consulta ha sido respondida</p>
+          <p>Gracias por contactarnos. Sobre lo consultado ...</p>
+        </button>
+        <button mat-menu-item class="item">
+          <p class="item-title">Aviso</p>
+          <p>Este mes lograste 10 nuevos clientes</p>
+        </button>
+      </mat-menu>
       <button
         mat-icon-button
         matTooltip="Mi cuenta"
