@@ -34,6 +34,10 @@ export class FormularioContactoComponent {
     } as Contacto;
     this.contactoService.create(this.contacto).finally(() => {
       this.openDialog();
+      this.contactoForm.reset();
+      Object.keys(this.contactoForm.controls).forEach(key => {
+        this.contactoForm.get(key)?.setErrors(null);
+      });
     });
   }
 

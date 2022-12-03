@@ -34,7 +34,10 @@ export class FormularioRegistroVendedorComponent {
 
     this.vendedoresService.create(this.vendedor).finally(() => {
       this.openDialog();
-      console.log(this.vendedorForm.value);
+      this.vendedorForm.reset();
+      Object.keys(this.vendedorForm.controls).forEach(key => {
+        this.vendedorForm.get(key)?.setErrors(null);
+      });
     });
   }
 

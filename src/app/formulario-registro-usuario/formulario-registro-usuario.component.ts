@@ -37,7 +37,10 @@ export class FormularioRegistroUsuarioComponent {
 
     this.clientesService.create(this.cliente).finally(() => {
       this.openDialog();
-      console.log(this.usuarioForm.value);
+      this.usuarioForm.reset();
+      Object.keys(this.usuarioForm.controls).forEach(key => {
+        this.usuarioForm.get(key)?.setErrors(null);
+      });
     });
   }
 
