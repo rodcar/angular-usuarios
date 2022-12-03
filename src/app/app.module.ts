@@ -40,6 +40,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TablaSuscriptoresComponent } from './tabla-suscriptores/tabla-suscriptores.component';
 import { TablaVendedoresComponent } from './tabla-vendedores/tabla-vendedores.component';
+import { FormularioRegistroVendedorComponent, VendedorSuccessDialog } from './formulario-registro-vendedor/formulario-registro-vendedor.component';
+import { AgregarVendedorPageComponent } from './pages/agregar-vendedor-page/agregar-vendedor-page.component';
 
 
 @NgModule({
@@ -60,7 +62,10 @@ import { TablaVendedoresComponent } from './tabla-vendedores/tabla-vendedores.co
     ContactoSuccessDialog,
     DashboardComponent,
     TablaSuscriptoresComponent,
-    TablaVendedoresComponent
+    TablaVendedoresComponent,
+    FormularioRegistroVendedorComponent,
+    VendedorSuccessDialog,
+    AgregarVendedorPageComponent
   ],
   imports: [
     BrowserModule,

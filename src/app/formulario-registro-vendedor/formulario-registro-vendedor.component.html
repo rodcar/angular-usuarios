@@ -1,0 +1,68 @@
+<form [formGroup]="vendedorForm" (ngSubmit)="onSubmit()" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre Completo</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="name"
+        placeholder="Ingrese su nombre completo"
+      />
+      <mat-error *ngIf="vendedorForm.controls.name.hasError('maxlength')">
+        El nombre debe tener como máximo <strong>50 caracteres</strong>
+      </mat-error>
+      <mat-error *ngIf="vendedorForm.controls.name.hasError('pattern')">
+        El nombre solo puede contener <strong>letras</strong>
+      </mat-error>
+      <mat-error *ngIf="vendedorForm.controls.name.hasError('required')">
+        El nombre completo es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+   
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Ingrese su correo"
+      />
+      <mat-error *ngIf="vendedorForm.controls.email.hasError('pattern')">
+        El correo sebe seguir el formato, por ejemplo <strong>correo@gmail.com</strong>
+      </mat-error>
+      <mat-error *ngIf="vendedorForm.controls.email.hasError('email')">
+        El correo sebe seguir el formato, por ejemplo <strong>correo@gmail.com</strong>
+      </mat-error>
+      <mat-error *ngIf="vendedorForm.controls.email.hasError('required')">
+        El correo es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Teléfono</mat-label>
+      <input
+        type="tel"
+        matInput
+        formControlName="phone"
+        placeholder="Ingrese su teléfono"
+      />
+      <mat-error *ngIf="vendedorForm.controls.phone.hasError('pattern')">
+        El número de teléfono solo puede contener <strong>números</strong>
+      </mat-error>
+      <mat-error *ngIf="vendedorForm.controls.phone.hasError('minlength')">
+        El número de teléfono debe tener como mínimo <strong>7 caracteres</strong>
+      </mat-error>
+      <mat-error *ngIf="vendedorForm.controls.phone.hasError('maxlength')">
+        El número de teléfono debe tener como máximo <strong>9 caracteres</strong>
+      </mat-error>
+      <mat-error *ngIf="vendedorForm.controls.phone.hasError('required')">
+        El teléfono es <strong>obligatorio</strong>
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="vendedorForm.invalid"
+    >
+      Registrar
+    </button>
+  </form>
