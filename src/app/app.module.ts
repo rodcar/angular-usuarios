@@ -42,6 +42,7 @@ import { TablaSuscriptoresComponent } from './tabla-suscriptores/tabla-suscripto
 import { TablaVendedoresComponent } from './tabla-vendedores/tabla-vendedores.component';
 import { FormularioRegistroVendedorComponent, VendedorSuccessDialog } from './formulario-registro-vendedor/formulario-registro-vendedor.component';
 import { AgregarVendedorPageComponent } from './pages/agregar-vendedor-page/agregar-vendedor-page.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { AgregarVendedorPageComponent } from './pages/agregar-vendedor-page/agre
     TablaVendedoresComponent,
     FormularioRegistroVendedorComponent,
     VendedorSuccessDialog,
-    AgregarVendedorPageComponent
+    AgregarVendedorPageComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
