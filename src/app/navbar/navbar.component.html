@@ -13,6 +13,10 @@
         <mat-icon matListItemIcon>home</mat-icon>
         <a matListItemLine>Página principal</a>
       </a>
+      <a mat-list-item routerLink="dashboard" routerLinkActive="active-list-item">
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <a matListItemLine>Dashboard</a>
+      </a>      
       <mat-expansion-panel [class.mat-elevation-z0]="true" expanded="true">
         <mat-expansion-panel-header>
             Clientes
@@ -28,7 +32,7 @@
           </a>
         </mat-nav-list>
     </mat-expansion-panel>
-    <mat-expansion-panel [class.mat-elevation-z0]="true" expanded="true">
+    <mat-expansion-panel [class.mat-elevation-z0]="true" expanded="false">
       <mat-expansion-panel-header>
           Ventas
       </mat-expansion-panel-header>
