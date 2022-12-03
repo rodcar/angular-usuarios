@@ -1,14 +1,18 @@
 <form [formGroup]="suscripcionForm" (ngSubmit)="onSubmit()" class="example-form">
-    
-    <mat-form-field class="example-full-width">
-        <mat-label>Correo</mat-label>
-        <input type="email" matInput formControlName="email" placeholder="Ingrese su correo" />
-        <mat-error *ngIf="suscripcionForm.controls.email.hasError('required')">
-            El correo es <strong>obligatorio</strong>
-        </mat-error>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" type="submit" [disabled]="suscripcionForm.invalid">
-        Suscribir
-    </button>
+    <div class="d-flex align-items-center">
+        <div class="mx-3">
+            <mat-form-field class="example-full-width">
+                <mat-label>Correo</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ingrese su correo" />
+                <mat-error *ngIf="suscripcionForm.controls.email.hasError('required')">
+                    El correo es <strong>obligatorio</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" type="submit" [disabled]="suscripcionForm.invalid">
+                Suscribir
+            </button>
+        </div>
+    </div>
 </form>
