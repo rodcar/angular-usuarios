@@ -1,6 +1,7 @@
 <form [formGroup]="suscripcionForm" (ngSubmit)="onSubmit()" class="example-form">
+    <p>Suscribete a nuestra novedades mensuales</p>
     <div class="d-flex align-items-center">
-        <div class="mx-3">
+        <div class="input-suscripcion">
             <mat-form-field class="example-full-width">
                 <mat-label>Correo</mat-label>
                 <input type="email" matInput formControlName="email" placeholder="Ingrese su correo" />
