@@ -39,6 +39,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TablaSuscriptoresComponent } from './tabla-suscriptores/tabla-suscriptores.component';
+import { TablaVendedoresComponent } from './tabla-vendedores/tabla-vendedores.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { TablaSuscriptoresComponent } from './tabla-suscriptores/tabla-suscripto
     UsuarioSuccessDialog,
     ContactoSuccessDialog,
     DashboardComponent,
-    TablaSuscriptoresComponent
+    TablaSuscriptoresComponent,
+    TablaVendedoresComponent
   ],
   imports: [
     BrowserModule,

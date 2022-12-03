@@ -8,6 +8,7 @@ import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agrega
 import { ContactoPageComponent } from './pages/contacto-page/contacto-page.component';
 import { TablaSuscriptoresComponent } from './tabla-suscriptores/tabla-suscriptores.component';
 import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.component';
+import { TablaVendedoresComponent } from './tabla-vendedores/tabla-vendedores.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'vendedores',
+    component: TablaVendedoresComponent
   },
   {
     path: 'inicio',
