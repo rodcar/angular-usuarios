@@ -38,6 +38,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { TablaSuscriptoresComponent } from './tabla-suscriptores/tabla-suscriptores.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     EmailSuccessDialog,
     UsuarioSuccessDialog,
     ContactoSuccessDialog,
-    DashboardComponent
+    DashboardComponent,
+    TablaSuscriptoresComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { FormularioRegistroUsuarioComponent } from './formulario-registro-usuari
 import { HomeComponent } from './home/home.component';
 import { AgregarUsuarioPageComponent } from './pages/agregar-usuario-page/agregar-usuario-page.component';
 import { ContactoPageComponent } from './pages/contacto-page/contacto-page.component';
+import { TablaSuscriptoresComponent } from './tabla-suscriptores/tabla-suscriptores.component';
 import { TablaUsuariosComponent } from './tabla-usuarios/tabla-usuarios.component';
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'usuarios',
     component: TablaUsuariosComponent
+  },
+  {
+    path: 'suscriptores',
+    component: TablaSuscriptoresComponent
   },
   {
     path: '**',
