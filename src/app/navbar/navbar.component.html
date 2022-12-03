@@ -89,9 +89,26 @@
       </button>
       <span>{{ title }}</span>
       <span class="toolbar-item-spacer"></span>
-      <button mat-icon-button matTooltip="Notificaciones">
+      <button mat-icon-button matTooltip="Notificaciones" [matMenuTriggerFor]="belowMenu">
         <mat-icon>notifications</mat-icon>
       </button>
+      <mat-menu #belowMenu="matMenu" xPosition="before" class="my-menu">
+        <div class="notification-title">
+          <h3>Notificaciones</h3>  
+        </div>
+        <button mat-menu-item class="item">
+          <p class="item-title">Titulo</p>
+          <p>Contenido</p>
+        </button>
+        <button mat-menu-item class="item">
+          <p class="item-title">Titulo</p>
+          <p>Contenido</p>
+        </button>
+        <button mat-menu-item class="item">
+          <p class="item-title">Titulo</p>
+          <p>Contenido</p>
+        </button>
+      </mat-menu>
       <button
         mat-icon-button
         matTooltip="Mi cuenta"

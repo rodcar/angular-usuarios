@@ -27,3 +27,27 @@
 .toolbar-item-spacer {
   flex: 1 1 auto;
 }
+
+::ng-deep .my-menu {
+  max-width:fit-content !important;
+}
+
+.notification-title {
+  margin: 10px 0;
+  width: 450px;
+  font-weight: bold;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.notification-title h3 {
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+.item {
+  padding: 10px 0 0 15px;
+}
+
+.item-title {
+  font-weight: 500;
+}
