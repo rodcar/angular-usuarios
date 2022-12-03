@@ -28,6 +28,10 @@ export class FormularioSuscripcionComponent {
       email: this.suscripcionForm.controls.email.value.trim()
     } as Suscripcion;
     this.suscripcionService.create(this.suscripcion).finally(() => {
+      this.suscripcionForm.reset();
+      Object.keys(this.suscripcionForm.controls).forEach(key => {
+        this.suscripcionForm.get(key)?.setErrors(null);
+      });
       this.openDialog();
     });
   }
