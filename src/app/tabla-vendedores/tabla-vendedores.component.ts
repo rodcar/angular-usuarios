@@ -10,7 +10,7 @@ import { VendedoresFirestoreService } from '../vendedores-firestore.service';
   styleUrls: ['./tabla-vendedores.component.css']
 })
 export class TablaVendedoresComponent {
-  displayedColumns: string[] = ['id', 'name', 'email'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'phone'];
   dataSource?: MatTableDataSource<Vendedor>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
